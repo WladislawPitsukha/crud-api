@@ -4,9 +4,10 @@
   "description": "A simple RESTful CRUD API built with Node.js, providing basic Create, Read, Update, and Delete operations for managing resources.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"No tests specified yet\" && exit 0"
+    "start:dev": "ts-node-dev --respawn src/server.ts",
+    "start:prod": "tsc && node dist/server.js",
+    "build": "tsc",
+    "test": "echo \"Add tests here\""
   },
   "repository": {
     "type": "git",
@@ -28,14 +29,18 @@
   },
   "homepage": "https://github.com/WladislawPitsukha/crud-api#readme",
   "dependencies": {
-    "@types/node": "^25.5.0",
     "0d": "^0.0.1",
+    "crypto": "^1.0.1",
     "dotenv": "^17.3.1",
     "fastify": "^5.8.4",
+    "node": "^25.8.2",
     "nodemon": "^3.1.14",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.2",
     "uuid": "^13.0.0",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0"
   }
 }
